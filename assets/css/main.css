@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+body {
+	background: linear-gradient(0deg, #1b1c30, #1b1c30),
+		linear-gradient(0deg, #ffffff, #ffffff);
+	position: relative;
+}
+header {
+	background-image: url("../img/title-eksekutif.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card {
+	position: relative;
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(27, 33, 41, 0) 0%, #202d3c 100%);
+	color: white;
+	padding: 6px;
+}
+.card-border {
+	border-radius: 8px;
+	border: 1px solid #393a4e;
+}
+.tops {
+	position: absolute;
+	top: -15px;
+	font-size: 12px;
+	border-radius: 4px;
+	color: #1b1c30;
+}
+
+/* bgtops */
+.bgtops-setaman {
+	background: #62b365;
+}
+.bgtops-goso {
+	background: #5acb11;
+}
+.bgtops-bageur {
+	background: #439e94;
+}
+.bgtops-kelom {
+	background: #73bce0;
+}
+.bgtops-bakul {
+	background: #f9c207;
+}
+
+.topout {
+	font-size: 12px;
+	background: #62b365;
+	border-radius: 4px;
+	color: #1b1c30;
+}
+.card-inner {
+	border-radius: 16px;
+	border: 1px solid #56b4e9;
+	background: linear-gradient(
+		180deg,
+		#373958 0%,
+		rgba(48, 81, 135, 0.2) 85.42%,
+		rgba(50, 90, 153, 0) 100%
+	);
+}
+.card-inner-goso {
+	border-radius: 12px;
+	border: 1px solid #736dbe;
+	background: linear-gradient(
+		180deg,
+		rgba(76, 81, 128, 0.1) 0%,
+		rgba(21, 19, 53, 0.8) 100%
+	);
+}
+.textin {
+	font-size: 12px;
+}
