@@ -21,21 +21,21 @@
                                                     <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="row g-1">
                                                     <div class="col-md-12">Data Tanam:</div>
-                                                     <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -43,11 +43,11 @@
                                             <div class="col-md-12">
                                                 <div class="row g-1">
                                                     <div class="col-md-12">Data Panen:</div>
-                                                     <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -63,11 +63,11 @@
                                             <div class="col-md-12">
                                                 <div class="row g-1">
                                                     <div class="col-md-12">Data Semai:</div>
-                                                     <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -75,11 +75,11 @@
                                             <div class="col-md-12">
                                                 <div class="row g-1">
                                                     <div class="col-md-12">Data Tanam:</div>
-                                                     <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -87,11 +87,11 @@
                                             <div class="col-md-12">
                                                 <div class="row g-1">
                                                     <div class="col-md-12">Data Panen:</div>
-                                                     <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
                                                             <p class=" fw-medium" style="font-size: 14px">
-                                                        Mangkubumi</p>
-                                                        <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                                Mangkubumi</p>
+                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,15 +133,15 @@
                                                 colors: ["#57AFA9", "#FFC56E", "#EE63A1"],
                                                 series: [{
                                                         name: "Penyemaian",
-                                                        data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
+                                                        data: [10, 33, 55, 65, 22],
                                                     },
                                                     {
                                                         name: "Penanaman",
-                                                        data: [23, 24, 54, 66, 22, 54, 54, 23, 42, 75],
+                                                        data: [23, 24, 54, 66, 22],
                                                     },
                                                     {
                                                         name: "Panen",
-                                                        data: [22, 30, 45, 36, 22, 54, 34, 33, 44, 65],
+                                                        data: [22, 30, 45, 36, 22],
                                                     },
                                                 ],
                                                 xaxis: {
@@ -151,11 +151,6 @@
                                                         "Data 3",
                                                         "Data 4",
                                                         "Data 5",
-                                                        "Data 6",
-                                                        "Data 7",
-                                                        "Data 8",
-                                                        "Data 9",
-                                                        "Data 10",
                                                     ],
                                                 },
                                                 stroke: {

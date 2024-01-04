@@ -131,6 +131,9 @@
                                                     },
                                                 },
                                                 colors: ["#64CC2C"],
+                                                fill: {
+                                                    type: 'gradient',
+                                                },
                                                 series: [{
                                                     name: "Penyemaian",
                                                     data: [<?php
@@ -219,8 +222,11 @@
                                                     },
                                                 },
                                                 colors: ["#56B4E9"],
+                                                fill: {
+                                                    type: 'gradient',
+                                                },
                                                 series: [{
-                                                    name: "Penyemaian",
+                                                    name: "data",
                                                     data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
                                                 }, ],
                                                 xaxis: {

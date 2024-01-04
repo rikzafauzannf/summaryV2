@@ -21,7 +21,7 @@ class Bakul extends CI_Controller
      */
     public function index()
     {
-        $data['title']  = "Summary Bageur";
+        $data['title']  = "Summary Bakul";
         $data['header'] = "Bakul";
         $data['imgUrl'] = "/assets/img/logo-bakul.svg";
         $this->load->view('partials/header.php', $data);
