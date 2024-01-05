@@ -194,81 +194,82 @@
                                 <div class="card card-inner-goso">
                                     <div class="card-body">
                                         <div class="dataSplide" role="group" aria-label="Splide Basic HTML Example">
-                                            
-                                        <div>
-                                            <div id="chartgoso"></div>
-                                        </div>
 
-                                        <script>
-                                            var options = {
-                                                chart: {
-                                                    foreColor: "#ffffff",
-                                                    type: "bar",
-                                                    height: 450,
-                                                    toolbar: {
-                                                        show: true,
-                                                    },
-                                                },
-                                                dataLabels: {
-                                                    enabled: true,
-                                                },
-                                                plotOptions: {
-                                                    bar: {
-                                                        barHeight: "100%",
-                                                        horizontal: false,
-                                                        dataLabels: {
-                                                            position: "bottom",
+                                            <div>
+                                                <div id="chartgoso"></div>
+                                            </div>
+
+                                            <script>
+                                                var options = {
+                                                    chart: {
+                                                        foreColor: "#ffffff",
+                                                        type: "bar",
+                                                        height: 450,
+                                                        toolbar: {
+                                                            show: true,
                                                         },
                                                     },
-                                                },
-                                                colors: ["#56B4E9"],
-                                                fill: {
-                                                    type: 'gradient',
-                                                },
-                                                series: [{
-                                                    name: "data",
-                                                    data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
-                                                }, ],
-                                                xaxis: {
-                                                    categories: [
-                                                        "Data 1",
-                                                        "Data 2",
-                                                        "Data 3",
-                                                        "Data 4",
-                                                        "Data 5",
-                                                        "Data 6",
-                                                        "Data 7",
-                                                        "Data 8",
-                                                        "Data 9",
-                                                        "Data 10",
-                                                    ],
-                                                },
-                                                stroke: {
-                                                    show: true,
-                                                    width: 1,
-                                                    colors: ["#56B4E9"],
-                                                },
-                                                tooltip: {
-                                                    theme: "dark",
-                                                    x: {
-                                                        show: false,
+                                                    dataLabels: {
+                                                        enabled: true,
                                                     },
-                                                    y: {
-                                                        title: {
-                                                            formatter: function() {
-                                                                return "";
+                                                    plotOptions: {
+                                                        bar: {
+                                                            barHeight: "100%",
+                                                            horizontal: false,
+                                                            dataLabels: {
+                                                                position: "bottom",
                                                             },
                                                         },
                                                     },
-                                                },
-                                            };
+                                                    colors: ["#56B4E9"],
+                                                    fill: {
+                                                        type: 'gradient',
+                                                    },
+                                                    series: [{
+                                                        name: "data",
+                                                        data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
+                                                    }, ],
+                                                    xaxis: {
+                                                        categories: [
+                                                            "Data 1",
+                                                            "Data 2",
+                                                            "Data 3",
+                                                            "Data 4",
+                                                            "Data 5",
+                                                            "Data 6",
+                                                            "Data 7",
+                                                            "Data 8",
+                                                            "Data 9",
+                                                            "Data 10",
+                                                        ],
+                                                    },
+                                                    stroke: {
+                                                        show: true,
+                                                        width: 1,
+                                                        colors: ["#56B4E9"],
+                                                    },
+                                                    tooltip: {
+                                                        theme: "dark",
+                                                        x: {
+                                                            show: false,
+                                                        },
+                                                        y: {
+                                                            title: {
+                                                                formatter: function() {
+                                                                    return "";
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                };
 
-                                            var chart = new ApexCharts(
-                                                document.querySelector("#chartgoso"),
-                                                options
-                                            );
-                                            chart.render();
-                                        </script>
+                                                var chart = new ApexCharts(
+                                                    document.querySelector("#chartgoso"),
+                                                    options
+                                                );
+                                                chart.render();
+                                            </script>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -277,5 +278,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </main>

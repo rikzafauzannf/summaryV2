@@ -201,7 +201,7 @@
       <!-- data slide -->
       <div class="col-md-4">
         <div class="card card-border mb-4">
-          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Data Partisipan</div>
+          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Jenis Penerima BOX</div>
           <div class="card-body">
             <div>
               <div id="charte"></div>
@@ -282,30 +282,43 @@
           </div>
         </div>
 
-        <div class="card card-border">
+        <div class="card card-border mb-4">
           <div class="tops bgtops-bakul py-1 px-4 fw-bold">Pertisipan BakulTasik</div>
           <div class="card-body">
             <div class="partisipan w-100">
               <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
+              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
               <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
               <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
             </div>
-            <script>
-              $(document).ready(function() {
-                $('.partisipan').slick({
-                  infinite: true,
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  autoplay: true,
-                  autoplaySpeed: 2000,
-                  arrows: false,
-                });
-              });
-            </script>
+
+          </div>
+        </div>
+        <div class="card card-border">
+          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Pertisipan BakulTasik</div>
+          <div class="card-body">
+            <div class="partisipan w-100">
+              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
+              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
+              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
+              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
+            </div>
+
           </div>
         </div>
       </div>
+      <script>
+        $(document).ready(function() {
+          $('.partisipan').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+          });
+        });
+      </script>
       <!-- data slide -->
       <!-- <div class="col-md-2">
         <div class="card card-border">

@@ -10,54 +10,35 @@
                     <div class="card-body">
                         <div class="row my-3 g-2">
                             <div class="col-md-4">
-                                <!-- data terbanyak -->
+                                <!-- data pencapaian -->
                                 <div class="card card-inner shadow mb-4">
-                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Data Terbanyak</div>
+                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Persentase Target 1jt Tanaman</div>
                                     <div class="card-body">
-                                        <div class="row g-1 textin">
+                                        <div class="row g-2 textin">
                                             <div class="col-md-12">
-                                                <div class="row g-1">
-                                                    <div class="col-md-12">Data Semai:</div>
-                                                    <div class="col-md-12">
-                                                        <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
-                                                        </div>
-                                                    </div>
-
+                                                <div class="d-flex justify-content-between align-items-center w-100">
+                                                    <p class="fw-bold fs-5">Penyemaian</p>
+                                                    <p>28282828</p>
+                                                </div>
+                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="row g-1">
-                                                    <div class="col-md-12">Data Tanam:</div>
-                                                    <div class="col-md-12">
-                                                        <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
-                                                        </div>
-                                                    </div>
+                                                <div class="d-flex justify-content-between align-items-center w-100">
+                                                    <p class="fw-bold fs-5">Penanaman</p>
+                                                    <p>28282828</p>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="row g-1">
-                                                    <div class="col-md-12">Data Panen:</div>
-                                                    <div class="col-md-12">
-                                                        <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
-                                                        </div>
-                                                    </div>
+                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- data tersedikit -->
+                                <!-- data terbanyak -->
                                 <div class="card card-inner shadow">
-                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Data Tersedikit</div>
+                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Data Terbanyak</div>
                                     <div class="card-body">
                                         <div class="row g-1 textin">
                                             <div class="col-md-12">
