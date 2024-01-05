@@ -16,19 +16,31 @@
                                         <div class="d-flex justify-content-between border-bottom border-light mb-2">
                                             <p>Total:</p>
                                             <p class="text-end">
-                                                <span class="fw-bold" style="font-size: 20px">139169</span>/kg
+                                                <span class="fw-bold" style="font-size: 20px"><?= number_format($totalData, 2, '.', ',') ?></span>/kg
                                             </p>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom border-light mb-2">
                                             <p>Bulan ini:</p>
                                             <p class="text-end">
-                                                <span class="fw-bold" style="font-size: 20px">139169</span>/kg
+                                                <span class="fw-bold" style="font-size: 20px">
+                                                    <?php
+                                                    foreach ($bulanini as $data) {
+                                                        echo number_format($data['total_jumlah'], 2, '.', ',');
+                                                    }
+                                                    ?>
+                                                </span>/kg
                                             </p>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom border-light mb-2">
                                             <p>Hari ini:</p>
                                             <p class="text-end">
-                                                <span class="fw-bold" style="font-size: 20px">139169</span>/kg
+                                                <span class="fw-bold" style="font-size: 20px">
+                                                    <?php
+                                                    foreach ($hariIni as $data) {
+                                                        echo number_format($data['lapsam_jumlah'], 2, '.', ',');
+                                                    }
+                                                    ?>
+                                                </span>/kg
                                             </p>
                                         </div>
                                     </div>
@@ -41,27 +53,20 @@
                                                 <div class="col-md-12 text-center">
                                                     Tertinggi Kecamatan
                                                 </div>
-                                                <div class="col-6 border-end border-white" style="font-size: 14px;">
-                                                    Tawang
-                                                </div>
-                                                <div class="col-6 text-center">
-                                                    <div class="fw-bold" style="font-size: 20px">
-                                                        <span id="counter"></span>
+                                                <?php
+                                                foreach ($kecamatanTertinggi as $items) :
+                                                ?>
+                                                    <div class="col-6 border-end border-white" style="font-size: 14px;">
+                                                        <?= $items['nama_kecamatan'] ?>
                                                     </div>
-                                                    /kg
-                                                </div>
-                                                <script>
-                                                    let counts = setInterval(updated, 50);
-                                                    let upto = 20000;
-
-                                                    function updated() {
-                                                        let count = document.getElementById("counter");
-                                                        count.innerHTML = ++upto;
-                                                        if (upto === 28071) {
-                                                            clearInterval(counts);
-                                                        }
-                                                    }
-                                                </script>
+                                                    <div class="col-6 text-center">
+                                                        <div class="fw-bold" style="font-size: 20px">
+                                                            <span class="counter"><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
+                                                            </span>
+                                                        </div>
+                                                        /kg
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -74,27 +79,20 @@
                                                 <div class="col-md-12 text-center">
                                                     Tertinggi Kelurahan
                                                 </div>
-                                                <div class="col-6 border-end border-white" style="font-size: 14px;">
-                                                    Mangkubumi
-                                                </div>
-                                                <div class="col-6 text-center">
-                                                    <div class="fw-bold" style="font-size: 20px">
-                                                        <span id="counters"></span>
+                                                <?php
+                                                foreach ($kelurahanTertinggi as $items) :
+                                                ?>
+                                                    <div class="col-6 border-end border-white" style="font-size: 14px;">
+                                                        <?= $items['nama_kelurahan'] ?>
                                                     </div>
-                                                    /kg
-                                                </div>
-                                                <script>
-                                                    let counters = setInterval(updated, 50);
-                                                    let up = 20000;
-
-                                                    function updated() {
-                                                        let count = document.getElementById("counters");
-                                                        count.innerHTML = ++up;
-                                                        if (up === 28071) {
-                                                            clearInterval(counters);
-                                                        }
-                                                    }
-                                                </script>
+                                                    <div class="col-6 text-center">
+                                                        <div class="fw-bold" style="font-size: 20px">
+                                                            <span class="counter"><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
+                                                            </span>
+                                                        </div>
+                                                        /kg
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -138,13 +136,13 @@
                                                     name: "Penyemaian",
                                                     data: [<?php
                                                             foreach ($content as $data) {
-                                                                echo ($data['lapsam_jumlah'] . ',');
+                                                                echo ($data['total_jumlah'] . ',');
                                                             } ?>],
                                                 }, ],
                                                 xaxis: {
                                                     categories: [<?php
                                                                     foreach ($content as $data) {
-                                                                        echo ('"' . $data['nama_bulan'] . '",');
+                                                                        echo ('"' . $data['tanggal'] . '",');
                                                                     } ?>],
                                                 },
                                                 stroke: {
@@ -193,83 +191,115 @@
                             <div class="col-md-12">
                                 <div class="card card-inner-goso">
                                     <div class="card-body">
-                                        <div class="dataSplide" role="group" aria-label="Splide Basic HTML Example">
 
-                                            <div>
-                                                <div id="chartgoso"></div>
-                                            </div>
+                                        <div class="dataChart">
+                                            <?php
+                                            foreach ($dataPerkecamatan as $data) :
+                                            ?>
+                                                <div>
+                                                    <p class="fw-bold fs-5"><?= $data['nama_bulan'] ?></p>
+                                                    <div id="<?= str_replace(' ', '', $data['nama_bulan']) ?>"></div>
+                                                </div>
+                                            <?php endforeach; ?>
 
-                                            <script>
-                                                var options = {
-                                                    chart: {
-                                                        foreColor: "#ffffff",
-                                                        type: "bar",
-                                                        height: 450,
-                                                        toolbar: {
-                                                            show: true,
-                                                        },
-                                                    },
-                                                    dataLabels: {
-                                                        enabled: true,
-                                                    },
-                                                    plotOptions: {
-                                                        bar: {
-                                                            barHeight: "100%",
-                                                            horizontal: false,
-                                                            dataLabels: {
-                                                                position: "bottom",
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('.dataChart').slick({
+                                                    infinite: true,
+                                                    slidesToShow: 1,
+                                                    slidesToScroll: 1,
+                                                    autoplay: true,
+                                                    autoplaySpeed: 2000,
+                                                    arrows: false,
+                                                });
+                                            });
+                                        </script>
+
+                                        <script>
+                                            <?php foreach ($dataPerkecamatan as $data) : ?>
+                                                <?php
+                                                // Remove spaces from $data['nama_bulan'] for chart ID
+                                                $chartId = str_replace(' ', '', $data['nama_bulan']);
+                                                ?>
+                                                try {
+                                                    var options<?= $chartId ?> = {
+                                                        chart: {
+                                                            foreColor: "#ffffff",
+                                                            type: "bar",
+                                                            height: 450,
+                                                            toolbar: {
+                                                                show: true,
                                                             },
                                                         },
-                                                    },
-                                                    colors: ["#56B4E9"],
-                                                    fill: {
-                                                        type: 'gradient',
-                                                    },
-                                                    series: [{
-                                                        name: "data",
-                                                        data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
-                                                    }, ],
-                                                    xaxis: {
-                                                        categories: [
-                                                            "Data 1",
-                                                            "Data 2",
-                                                            "Data 3",
-                                                            "Data 4",
-                                                            "Data 5",
-                                                            "Data 6",
-                                                            "Data 7",
-                                                            "Data 8",
-                                                            "Data 9",
-                                                            "Data 10",
-                                                        ],
-                                                    },
-                                                    stroke: {
-                                                        show: true,
-                                                        width: 1,
-                                                        colors: ["#56B4E9"],
-                                                    },
-                                                    tooltip: {
-                                                        theme: "dark",
-                                                        x: {
-                                                            show: false,
+                                                        dataLabels: {
+                                                            enabled: true,
                                                         },
-                                                        y: {
-                                                            title: {
-                                                                formatter: function() {
-                                                                    return "";
+                                                        plotOptions: {
+                                                            bar: {
+                                                                barHeight: "100%",
+                                                                horizontal: false,
+                                                                dataLabels: {
+                                                                    position: "bottom",
                                                                 },
                                                             },
                                                         },
-                                                    },
-                                                };
+                                                        colors: ["#56B4E9"],
+                                                        fill: {
+                                                            type: 'gradient',
+                                                        },
+                                                        series: [{
+                                                            name: "data",
+                                                            data: [
+                                                                <?php
+                                                                foreach ($data['details'] as $dataDetails) {
+                                                                    echo ($dataDetails['lapsam_jumlah'] . ',');
+                                                                }
+                                                                ?>
+                                                            ],
+                                                        }, ],
+                                                        xaxis: {
+                                                            categories: [
+                                                                <?php
+                                                                foreach ($data['details'] as $dataDetails) {
+                                                                    echo ('"' . $dataDetails['name'] . '",');
+                                                                }
+                                                                ?>
+                                                            ],
+                                                        },
+                                                        stroke: {
+                                                            show: true,
+                                                            width: 1,
+                                                            colors: ["#56B4E9"],
+                                                        },
+                                                        tooltip: {
+                                                            theme: "dark",
+                                                            x: {
+                                                                show: false,
+                                                            },
+                                                            y: {
+                                                                title: {
+                                                                    formatter: function() {
+                                                                        return "";
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    };
 
-                                                var chart = new ApexCharts(
-                                                    document.querySelector("#chartgoso"),
-                                                    options
-                                                );
-                                                chart.render();
-                                            </script>
-                                        </div>
+                                                    var chart<?= $chartId ?> = new ApexCharts(
+                                                        document.querySelector("#<?= $chartId ?>"),
+                                                        options<?= $chartId ?>
+                                                    );
+
+                                                    chart<?= $chartId ?>.render();
+                                                } catch (error) {
+                                                    console.error('Error initializing chart ' + <?= $chartId ?> + ':', error);
+                                                }
+                                            <?php endforeach; ?>
+                                        </script>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -278,4 +308,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </main>

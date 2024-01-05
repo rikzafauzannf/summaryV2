@@ -283,25 +283,31 @@
         </div>
 
         <div class="card card-border mb-4">
-          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Pertisipan BakulTasik</div>
+          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Partisipan Hotel </div>
           <div class="card-body">
             <div class="partisipan w-100">
-              <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1.png') ?>" alt="" class="w-75"></div>
+              <?php
+              for ($i = 1; $i <= 9; $i++) :
+              ?>
+                <div><img src="<?= base_url('/assets/partisipan/hotel-' . $i . '.png') ?>" alt="" class="w-75"></div>
+              <?php
+              endfor;
+              ?>
             </div>
 
           </div>
         </div>
         <div class="card card-border">
-          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Pertisipan BakulTasik</div>
+          <div class="tops bgtops-bakul py-1 px-4 fw-bold">Partisipan Rumah Makan </div>
           <div class="card-body">
             <div class="partisipan w-100">
-              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
-              <div><img src="<?= base_url('/assets/partisipan/hotel1-potret.png') ?>" alt="" class="w-75"></div>
+              <?php
+              for ($i = 1; $i <= 6; $i++) :
+              ?>
+                <div><img src="<?= base_url('/assets/partisipan/rm-' . $i . '.png') ?>" alt="" class="w-75"></div>
+              <?php
+              endfor;
+              ?>
             </div>
 
           </div>

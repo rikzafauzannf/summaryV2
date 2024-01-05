@@ -12,13 +12,13 @@
                             <div class="col-md-4">
                                 <!-- data pencapaian -->
                                 <div class="card card-inner shadow mb-4">
-                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Persentase Target 1jt Tanaman</div>
+                                    <div class="tops bgtops-setaman py-1 px-4 fw-bold">Target 1jt Tanaman</div>
                                     <div class="card-body">
                                         <div class="row g-2 textin">
                                             <div class="col-md-12">
                                                 <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <p class="fw-bold fs-5">Penyemaian</p>
-                                                    <p>28282828</p>
+                                                    <p class="fw-semibold">Penyemaian</p>
+                                                    <p class="fw-bold" style="font-size: 16px;">28282828</p>
                                                 </div>
                                                 <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                                     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
@@ -26,8 +26,8 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <p class="fw-bold fs-5">Penanaman</p>
-                                                    <p>28282828</p>
+                                                    <p class="fw-semibold">Penanaman</p>
+                                                    <p class="fw-bold" style="font-size: 16px;">28282828</p>
                                                 </div>
                                                 <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                                     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
