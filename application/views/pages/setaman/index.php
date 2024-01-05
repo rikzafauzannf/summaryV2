@@ -21,7 +21,7 @@
                                                     <p class="fw-bold" style="font-size: 16px;">28282828</p>
                                                 </div>
                                                 <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: 75%;background-color: #57AFA9;color: #1b1c30;">75%</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -30,7 +30,7 @@
                                                     <p class="fw-bold" style="font-size: 16px;">28282828</p>
                                                 </div>
                                                 <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: 75%;background-color: #FFC56E;color: #1b1c30;">75%</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -46,9 +46,18 @@
                                                     <div class="col-md-12">Data Semai:</div>
                                                     <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                            <?php
+                                                            foreach ($tertinggiSemai as $variabel) :
+                                                            ?>
+                                                                <p class=" fw-medium" style="font-size: 14px">
+                                                                    <?= $variabel['Kecamatan'] ?>
+                                                                </p>
+                                                                <p class="fw-bold ps-3" style="font-size: 16px">
+                                                                    <?= number_format($variabel['jumlah_semai'], 2, '.', ',') ?>
+                                                                </p>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -58,9 +67,18 @@
                                                     <div class="col-md-12">Data Tanam:</div>
                                                     <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                            <?php
+                                                            foreach ($tertinggiTanam as $variabel) :
+                                                            ?>
+                                                                <p class=" fw-medium" style="font-size: 14px">
+                                                                    <?= $variabel['kecamatan'] ?>
+                                                                </p>
+                                                                <p class="fw-bold ps-3" style="font-size: 16px">
+                                                                    <?= number_format($variabel['jumlah_tanam'], 2, '.', ',') ?>
+                                                                </p>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -70,9 +88,18 @@
                                                     <div class="col-md-12">Data Panen:</div>
                                                     <div class="col-md-12">
                                                         <div class="d-flex justify-content-between align-items-center w-100">
-                                                            <p class=" fw-medium" style="font-size: 14px">
-                                                                Mangkubumi</p>
-                                                            <p class="fw-bold ps-3" style="font-size: 16px">28071</p>
+                                                            <?php
+                                                            foreach ($tertinggiPanen as $variabel) :
+                                                            ?>
+                                                                <p class=" fw-medium" style="font-size: 14px">
+                                                                    <?= $variabel['kecamatan'] ?>
+                                                                </p>
+                                                                <p class="fw-bold ps-3" style="font-size: 16px">
+                                                                    <?= number_format($variabel['jumlah_panen'], 2, '.', ',') ?>
+                                                                </p>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
