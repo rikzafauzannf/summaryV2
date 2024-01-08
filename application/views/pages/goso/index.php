@@ -61,7 +61,8 @@
                                                     </div>
                                                     <div class="col-6 text-center">
                                                         <div class="fw-bold" style="font-size: 20px">
-                                                            <span class="counter"><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
+                                                            <!-- class counter false -->
+                                                            <span class=""><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
                                                             </span>
                                                         </div>
                                                         /kg
@@ -87,7 +88,8 @@
                                                     </div>
                                                     <div class="col-6 text-center">
                                                         <div class="fw-bold" style="font-size: 20px">
-                                                            <span class="counter"><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
+                                                            <!-- class counter false -->
+                                                            <span class=""><?= number_format($items['total_jumlah'], 2, '.', ',') ?>
                                                             </span>
                                                         </div>
                                                         /kg

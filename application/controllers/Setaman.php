@@ -71,8 +71,8 @@ class Setaman extends CI_Controller
         $data['komoditasTerbanyak'] = $data_komoditasTerbanyak;
         $data['komoditas'] = $data_Komoditas;
 
-        $data['banyakSemai'] = number_format($dataPenyemaian, 2, ",", ".");
-        $data['banyakTanam'] = number_format($dataPenanaman, 2, ",", ".");
+        $data['banyakSemai'] = number_format($dataPenyemaian, 0, ",", ".");
+        $data['banyakTanam'] = number_format($dataPenanaman, 0, ",", ".");
         $data['persentasePenyemaian'] = number_format($persentasePenyemaian, 2) . "%";
         $data['persentasePenanaman']  = number_format($persentasePenanaman, 2) . "%";
 

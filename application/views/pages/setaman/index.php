@@ -53,7 +53,7 @@
                                                                     <?= $variabel['Kecamatan'] ?>
                                                                 </p>
                                                                 <p class="fw-bold ps-3" style="font-size: 16px">
-                                                                    <?= number_format($variabel['jumlah_semai'], 2, '.', ',') ?>
+                                                                    <?= number_format($variabel['jumlah_semai'], 0, '.', ',') ?>
                                                                 </p>
                                                             <?php
                                                             endforeach;
@@ -74,7 +74,7 @@
                                                                     <?= $variabel['kecamatan'] ?>
                                                                 </p>
                                                                 <p class="fw-bold ps-3" style="font-size: 16px">
-                                                                    <?= number_format($variabel['jumlah_tanam'], 2, '.', ',') ?>
+                                                                    <?= number_format($variabel['jumlah_tanam'], 0, '.', ',') ?>
                                                                 </p>
                                                             <?php
                                                             endforeach;
@@ -95,7 +95,7 @@
                                                                     <?= $variabel['kecamatan'] ?>
                                                                 </p>
                                                                 <p class="fw-bold ps-3" style="font-size: 16px">
-                                                                    <?= number_format($variabel['jumlah_panen'], 2, '.', ',') ?>
+                                                                    <?= number_format($variabel['jumlah_panen'], 0, '.', ',') ?>
                                                                 </p>
                                                             <?php
                                                             endforeach;
@@ -125,7 +125,7 @@
                                                     slidesToShow: 1,
                                                     slidesToScroll: 1,
                                                     autoplay: true,
-                                                    autoplaySpeed: 2000,
+                                                    autoplaySpeed: 4000,
                                                     arrows: false,
                                                 });
                                             });
@@ -336,7 +336,7 @@
                                                                 <span style="font-size: 16px"><?= $items['nama_komoditas'] ?></span>
 
                                                                 <br />
-                                                                <span class="fw-bold" style="font-size: 20px">21443</span>
+                                                                <!-- <span class="fw-bold" style="font-size: 20px">21443</span> -->
                                                             </small>
                                                             <div class="row g-1 align-items-center">
                                                                 <div class="col-md-12">
@@ -385,7 +385,7 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <p class="text-center">
-                                                                <span style="font-size: 20px"><?= $items['nama_komoditas'] ?></span>
+                                                                <span style="font-size: 18px"><?= $items['nama_komoditas'] ?></span>
 
                                                                 <br />
                                                                 <span class="fw-bold fs-6"><?= $items['total_tanam'] ?></span>
