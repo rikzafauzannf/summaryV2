@@ -46,7 +46,7 @@ class Bageur extends CI_Controller
         $data['totalBantuan'] = number_format($totalBantuan, 2, ",", ".") . " Bantuan";
 
         $data['title']  = "Summary Bageur";
-        $data['header'] = "Bageur";
+        $data['header'] = "Bageur (Janjian Berbuat Baik)";
         $data['imgUrl'] = "/assets/img/logo-bageur.svg";
         $this->load->view('partials/header.php', $data);
         $this->load->view('pages/bageur/index.php');

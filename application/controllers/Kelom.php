@@ -21,10 +21,10 @@ class Kelom extends CI_Controller
      */
     public function index()
     {
-        
+
 
         $data['title']  = "Summary Kelom";
-        $data['header'] = "Kelurahan On Mobile";
+        $data['header'] = "Kelom (Kelurahan On Mobile)";
         $data['imgUrl'] = "/assets/img/logo-kelom.svg";
         $this->load->view('partials/header.php', $data);
         $this->load->view('pages/kelom/index.php', $data);
