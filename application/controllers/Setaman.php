@@ -22,9 +22,12 @@ class Setaman extends CI_Controller
     public function index()
     {
         // fetch
-        $api_url_tertinggiSemai = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggisemai';
-        $api_url_tertinggiTanam = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggitanam';
-        $api_url_tertinggiPanen = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggipanen';
+        $api_url_tertinggiSemai  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggisemai';
+        $api_url_tertinggiTanam  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggitanam';
+        $api_url_tertinggiPanen  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggipanen';
+        $api_url_barPerkecamatan = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatasemaitanampanenkec';
+        $api_url_komoditasTerbanyak = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakomokec';
+        $api_url_Komoditas = 'https://setamancinta.tasikmalayakota.go.id/eks/apidataallkomoditas';
 
         // Lakukan GET request dengan file_get_contents
         $response_tertinggiSemai = file_get_contents($api_url_tertinggiSemai);
@@ -36,10 +39,22 @@ class Setaman extends CI_Controller
         $response_tertinggiPanen = file_get_contents($api_url_tertinggiPanen);
         $data_tertinggiPanen = json_decode($response_tertinggiPanen, true);
 
+        $response_barPerkecamatan = file_get_contents($api_url_barPerkecamatan);
+        $data_barPerkecamatan = json_decode($response_barPerkecamatan, true);
+
+        $response_komoditasTerbanyak = file_get_contents($api_url_komoditasTerbanyak);
+        $data_komoditasTerbanyak = json_decode($response_komoditasTerbanyak, true);
+
+        $response_Komoditas = file_get_contents($api_url_Komoditas);
+        $data_Komoditas = json_decode($response_Komoditas, true);
+
         // fetch data
-        $data['tertinggiSemai'] = $data_tertinggiSemai;
-        $data['tertinggiTanam'] = $data_tertinggiTanam;
-        $data['tertinggiPanen'] = $data_tertinggiPanen;
+        $data['tertinggiSemai']  = $data_tertinggiSemai;
+        $data['tertinggiTanam']  = $data_tertinggiTanam;
+        $data['tertinggiPanen']  = $data_tertinggiPanen;
+        $data['barPerkecamatan'] = $data_barPerkecamatan;
+        $data['komoditasTerbanyak'] = $data_komoditasTerbanyak;
+        $data['komoditas'] = $data_Komoditas;
 
         // data
         $data['title']  = "Summary Setaman";

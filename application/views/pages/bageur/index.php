@@ -138,7 +138,7 @@
               <div class="splide__track">
                 <ul class="splide__list">
                   <?php
-                  for ($i = 1; $i <= 10; $i++) :
+                  foreach ($dataBageur as $items) :
                   ?>
                     <li class="splide__slide">
                       <div class="card shadow">
@@ -147,10 +147,10 @@
 
                             <div class="col-md-12">
                               <p class="text-center">
-                                <span style="font-size: 20px">Kebutuhan Dasar Pangan</span>
+                                <span style="font-size: 20px"><?= $items['judul_galang'] ?></span>
 
                                 <br />
-                                <span class="fw-bold fs-5">21443</span>
+                                <span class="fw-bold fs-5"><?= $items['barang_terkumpul'] ?> barang</span>
                               </p>
                             </div>
                           </div>
@@ -158,7 +158,7 @@
                       </div>
                     </li>
                   <?php
-                  endfor;
+                  endforeach;
                   ?>
                 </ul>
               </div>

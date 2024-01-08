@@ -21,6 +21,19 @@ class Bageur extends CI_Controller
      */
     public function index()
     {
+        // fetch
+        $api_url_bageur = 'https://bageur.tasikmalayakota.go.id/Home/api';
+
+        // Lakukan GET request dengan file_get_contents
+        $response_bageur = file_get_contents($api_url_bageur);
+        $data_bageur = json_decode($response_bageur, true);
+
+
+        
+
+        // get
+        $data['dataBageur'] = $data_bageur;
+
         $data['title']  = "Summary Bageur";
         $data['header'] = "Bageur";
         $data['imgUrl'] = "/assets/img/logo-bageur.svg";

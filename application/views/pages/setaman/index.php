@@ -121,7 +121,7 @@
                                                 chart: {
                                                     foreColor: "#ffffff",
                                                     type: "bar",
-                                                    height: 450,
+                                                    height: 480,
                                                     toolbar: {
                                                         show: true,
                                                     },
@@ -141,24 +141,36 @@
                                                 colors: ["#57AFA9", "#FFC56E", "#EE63A1"],
                                                 series: [{
                                                         name: "Penyemaian",
-                                                        data: [10, 33, 55, 65, 22],
+                                                        data: [<?php
+                                                                foreach ($barPerkecamatan as $items) {
+                                                                    echo ($items['total_jumlah_semai'] . ',');
+                                                                }
+                                                                ?>],
                                                     },
                                                     {
                                                         name: "Penanaman",
-                                                        data: [23, 24, 54, 66, 22],
+                                                        data: [<?php
+                                                                foreach ($barPerkecamatan as $items) {
+                                                                    echo ($items['total_jumlah_tanam'] . ',');
+                                                                }
+                                                                ?>],
                                                     },
                                                     {
                                                         name: "Panen",
-                                                        data: [22, 30, 45, 36, 22],
+                                                        data: [<?php
+                                                                foreach ($barPerkecamatan as $items) {
+                                                                    echo ($items['total_jumlah_panen'] . ',');
+                                                                }
+                                                                ?>],
                                                     },
                                                 ],
                                                 xaxis: {
                                                     categories: [
-                                                        "Data 1",
-                                                        "Data 2",
-                                                        "Data 3",
-                                                        "Data 4",
-                                                        "Data 5",
+                                                        <?php
+                                                        foreach ($barPerkecamatan as $items) {
+                                                            echo ('"' . $items['kecamatan'] . '",');
+                                                        }
+                                                        ?>
                                                     ],
                                                 },
                                                 stroke: {
@@ -205,18 +217,18 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     <?php
-                                    for ($i = 1; $i <= 10; $i++) :
+                                    foreach ($komoditasTerbanyak as $items) :
                                     ?>
                                         <li class="splide__slide">
                                             <div class="card shadow">
                                                 <div class="card-body">
                                                     <div class="row g-1 textin">
                                                         <div class="col-2">
-                                                            <img src="<?= base_url("assets/img/pin-selada-bokor.svg") ?>" alt="" class="w-100" />
+                                                            <img src="https://setamancinta.tasikmalayakota.go.id//assets/icon_new/<?= $items['Icon'] ?>" alt="" class="w-100" />
                                                         </div>
                                                         <div class="col-10">
                                                             <small>
-                                                                <span style="font-size: 16px">Kangkung</span>
+                                                                <span style="font-size: 16px"><?= $items['nama_komoditas'] ?></span>
 
                                                                 <br />
                                                                 <span class="fw-bold" style="font-size: 20px">21443</span>
@@ -226,10 +238,10 @@
                                                                     Komoditas Kecamatan
                                                                 </div>
                                                                 <div class="col-6 border-end border-white fw-medium" style="font-size: 14px">
-                                                                    Mangkubumi
+                                                                    <?= $items['kecamatan'] ?>
                                                                 </div>
                                                                 <div class="col-6 ps-2 fw-bold text-center" style="font-size: 16px">
-                                                                    13120
+                                                                    <?= $items['total_jumlah_tanam'] ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -238,7 +250,7 @@
                                             </div>
                                         </li>
                                     <?php
-                                    endfor;
+                                    endforeach;
                                     ?>
                                 </ul>
                             </div>
@@ -255,7 +267,7 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     <?php
-                                    for ($i = 1; $i <= 10; $i++) :
+                                    foreach ($komoditas as $items) :
                                     ?>
                                         <li class="splide__slide">
                                             <div class="card shadow">
@@ -263,15 +275,15 @@
                                                     <div class="row g-1 textin">
                                                         <div class="col-md-12">
                                                             <center>
-                                                                <img src="<?= base_url("assets/img/pin-selada-bokor.svg") ?>" alt="" class="w-25" />
+                                                                <img src="https://setamancinta.tasikmalayakota.go.id//assets/icon_new/<?= $items['icon'] ?>" alt="" class="w-25" />
                                                             </center>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <p class="text-center">
-                                                                <span style="font-size: 20px">Kangkung</span>
+                                                                <span style="font-size: 20px"><?= $items['nama_komoditas'] ?></span>
 
                                                                 <br />
-                                                                <span class="fw-bold fs-6">21443</span>
+                                                                <span class="fw-bold fs-6"><?= $items['total_tanam'] ?></span>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -279,7 +291,7 @@
                                             </div>
                                         </li>
                                     <?php
-                                    endfor;
+                                    endforeach;
                                     ?>
                                 </ul>
                             </div>
