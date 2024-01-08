@@ -23,16 +23,27 @@ class Bageur extends CI_Controller
     {
         // fetch
         $api_url_bageur = 'https://bageur.tasikmalayakota.go.id/Home/api';
+        $api_url_barangTersalurkan = 'https://bageur.tasikmalayakota.go.id/Home/apidatabarangtersalurkan';
 
         // Lakukan GET request dengan file_get_contents
         $response_bageur = file_get_contents($api_url_bageur);
         $data_bageur = json_decode($response_bageur, true);
 
+        $response_barangTersalurkan = file_get_contents($api_url_barangTersalurkan);
+        $data_barangTersalurkan = json_decode($response_barangTersalurkan, true);
 
-        
+        $totalBarangTersalurkan = 0;
+        foreach ($data_barangTersalurkan as $data) {
+            $totalBarangTersalurkan += $data['jumlah_barang'];
+        }
+
+        $totalBantuan = count($data_bageur);
 
         // get
         $data['dataBageur'] = $data_bageur;
+        $data['barangTersalurkan'] = $data_barangTersalurkan;
+        $data['totalBarangTersalurkan'] = number_format($totalBarangTersalurkan, 2, ",", ".") . " Barang";
+        $data['totalBantuan'] = number_format($totalBantuan, 2, ",", ".") . " Bantuan";
 
         $data['title']  = "Summary Bageur";
         $data['header'] = "Bageur";

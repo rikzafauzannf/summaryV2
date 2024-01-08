@@ -13,7 +13,7 @@
                     <p class="text-center">
                       <span class="fs-6">Bantuan Tersalurkan</span>
                       <br />
-                      <span class="fw-bold fs-5">28071</span>
+                      <span class="fw-bold fs-5"><?= $totalBantuan ?></span>
                     </p>
                   </div>
                 </div>
@@ -24,7 +24,7 @@
                     <p class="text-center">
                       <span class="fs-6">Barang Tersalurkan</span>
                       <br />
-                      <span class="fw-bold fs-5">28071</span>
+                      <span class="fw-bold fs-5"><?= $totalBarangTersalurkan ?></span>
                     </p>
                   </div>
                 </div>
@@ -138,7 +138,7 @@
               <div class="splide__track">
                 <ul class="splide__list">
                   <?php
-                  foreach ($dataBageur as $items) :
+                  foreach ($barangTersalurkan as $items) :
                   ?>
                     <li class="splide__slide">
                       <div class="card shadow">
@@ -147,10 +147,10 @@
 
                             <div class="col-md-12">
                               <p class="text-center">
-                                <span style="font-size: 20px"><?= $items['judul_galang'] ?></span>
+                                <span style="font-size: 18px"><?= $items['list_barang'] ?></span>
 
                                 <br />
-                                <span class="fw-bold fs-5"><?= $items['barang_terkumpul'] ?> barang</span>
+                                <span class="fw-bold fs-5"><?= $items['jumlah_barang'] ?> barang</span>
                               </p>
                             </div>
                           </div>

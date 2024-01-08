@@ -18,19 +18,19 @@
                                             <div class="col-md-12">
                                                 <div class="d-flex justify-content-between align-items-center w-100">
                                                     <p class="fw-semibold">Penyemaian</p>
-                                                    <p class="fw-bold" style="font-size: 16px;">28282828</p>
+                                                    <p class="fw-bold" style="font-size: 16px;"><?= $banyakSemai ?></p>
                                                 </div>
-                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: 75%;background-color: #57AFA9;color: #1b1c30;">75%</div>
+                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="<?= $persentasePenyemaian ?>" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: <?= $persentasePenyemaian ?>;background-color: #57AFA9;color: #1b1c30;"><?= $persentasePenyemaian ?></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="d-flex justify-content-between align-items-center w-100">
                                                     <p class="fw-semibold">Penanaman</p>
-                                                    <p class="fw-bold" style="font-size: 16px;">28282828</p>
+                                                    <p class="fw-bold" style="font-size: 16px;"><?= $banyakTanam ?></p>
                                                 </div>
-                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: 75%;background-color: #FFC56E;color: #1b1c30;">75%</div>
+                                                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="<?= $persentasePenanaman ?>" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated fw-bold" style="width: <?= $persentasePenanaman ?>;background-color: #FFC56E;color: #1b1c30;"><?= $persentasePenanaman ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -112,16 +112,32 @@
                                 <div class="card card-inner shadow">
                                     <div class="card-body">
                                         <!-- CHART CONTAINER -->
-                                        <div>
-                                            <div id="chart"></div>
+
+                                        <div class="dataSetaman">
+                                            <div id="chart1"></div>
+                                            <div id="chart2"></div>
                                         </div>
 
                                         <script>
-                                            var options = {
+                                            $(document).ready(function() {
+                                                $('.dataSetaman').slick({
+                                                    infinite: true,
+                                                    slidesToShow: 1,
+                                                    slidesToScroll: 1,
+                                                    autoplay: true,
+                                                    autoplaySpeed: 2000,
+                                                    arrows: false,
+                                                });
+                                            });
+                                        </script>
+
+                                        <script>
+                                            // Chart 1
+                                            var options1 = {
                                                 chart: {
                                                     foreColor: "#ffffff",
                                                     type: "bar",
-                                                    height: 480,
+                                                    height: 450,
                                                     toolbar: {
                                                         show: true,
                                                     },
@@ -142,7 +158,8 @@
                                                 series: [{
                                                         name: "Penyemaian",
                                                         data: [<?php
-                                                                foreach ($barPerkecamatan as $items) {
+                                                                $subset1 = array_slice($barPerkecamatan, 0, 5);
+                                                                foreach ($subset1 as $items) {
                                                                     echo ($items['total_jumlah_semai'] . ',');
                                                                 }
                                                                 ?>],
@@ -150,7 +167,8 @@
                                                     {
                                                         name: "Penanaman",
                                                         data: [<?php
-                                                                foreach ($barPerkecamatan as $items) {
+                                                                $subset1 = array_slice($barPerkecamatan, 0, 5);
+                                                                foreach ($subset1 as $items) {
                                                                     echo ($items['total_jumlah_tanam'] . ',');
                                                                 }
                                                                 ?>],
@@ -158,16 +176,17 @@
                                                     {
                                                         name: "Panen",
                                                         data: [<?php
-                                                                foreach ($barPerkecamatan as $items) {
+                                                                $subset1 = array_slice($barPerkecamatan, 0, 5);
+                                                                foreach ($subset1 as $items) {
                                                                     echo ($items['total_jumlah_panen'] . ',');
                                                                 }
                                                                 ?>],
-                                                    },
+                                                    }
                                                 ],
                                                 xaxis: {
                                                     categories: [
                                                         <?php
-                                                        foreach ($barPerkecamatan as $items) {
+                                                        foreach ($subset1 as $items) {
                                                             echo ('"' . $items['kecamatan'] . '",');
                                                         }
                                                         ?>
@@ -193,11 +212,97 @@
                                                 },
                                             };
 
-                                            var chart = new ApexCharts(
-                                                document.querySelector("#chart"),
-                                                options
+                                            var chart1 = new ApexCharts(
+                                                document.querySelector("#chart1"),
+                                                options1
                                             );
-                                            chart.render();
+                                            chart1.render();
+
+                                            // Chart 2
+                                            var options2 = {
+                                                chart: {
+                                                    foreColor: "#ffffff",
+                                                    type: "bar",
+                                                    height: 450,
+                                                    toolbar: {
+                                                        show: true,
+                                                    },
+                                                },
+                                                dataLabels: {
+                                                    enabled: true,
+                                                },
+                                                plotOptions: {
+                                                    bar: {
+                                                        barHeight: "100%",
+                                                        horizontal: true,
+                                                        dataLabels: {
+                                                            position: "bottom",
+                                                        },
+                                                    },
+                                                },
+                                                colors: ["#57AFA9", "#FFC56E", "#EE63A1"],
+                                                series: [{
+                                                        name: "Penyemaian",
+                                                        data: [<?php
+                                                                $subset2 = array_slice($barPerkecamatan, 5, 5);
+                                                                foreach ($subset2 as $items) {
+                                                                    echo ($items['total_jumlah_semai'] . ',');
+                                                                }
+                                                                ?>],
+                                                    },
+                                                    {
+                                                        name: "Penanaman",
+                                                        data: [<?php
+                                                                $subset2 = array_slice($barPerkecamatan, 5, 5);
+                                                                foreach ($subset2 as $items) {
+                                                                    echo ($items['total_jumlah_tanam'] . ',');
+                                                                }
+                                                                ?>],
+                                                    },
+                                                    {
+                                                        name: "Panen",
+                                                        data: [<?php
+                                                                $subset2 = array_slice($barPerkecamatan, 5, 5);
+                                                                foreach ($subset2 as $items) {
+                                                                    echo ($items['total_jumlah_panen'] . ',');
+                                                                }
+                                                                ?>],
+                                                    }
+                                                ],
+                                                xaxis: {
+                                                    categories: [
+                                                        <?php
+                                                        foreach ($subset2 as $items) {
+                                                            echo ('"' . $items['kecamatan'] . '",');
+                                                        }
+                                                        ?>
+                                                    ],
+                                                },
+                                                stroke: {
+                                                    show: true,
+                                                    width: 1,
+                                                    colors: ["#fff"],
+                                                },
+                                                tooltip: {
+                                                    theme: "dark",
+                                                    x: {
+                                                        show: false,
+                                                    },
+                                                    y: {
+                                                        title: {
+                                                            formatter: function() {
+                                                                return "";
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            };
+
+                                            var chart2 = new ApexCharts(
+                                                document.querySelector("#chart2"),
+                                                options2
+                                            );
+                                            chart2.render();
                                         </script>
                                     </div>
                                 </div>

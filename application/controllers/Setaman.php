@@ -25,7 +25,7 @@ class Setaman extends CI_Controller
         $api_url_tertinggiSemai  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggisemai';
         $api_url_tertinggiTanam  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggitanam';
         $api_url_tertinggiPanen  = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakecamatantertinggipanen';
-        $api_url_barPerkecamatan = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatasemaitanampanenkec';
+        $api_url_barPerkecamatan = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatasemaitanampanenkec'; //data sum
         $api_url_komoditasTerbanyak = 'https://setamancinta.tasikmalayakota.go.id/eks/apidatakomokec';
         $api_url_Komoditas = 'https://setamancinta.tasikmalayakota.go.id/eks/apidataallkomoditas';
 
@@ -42,11 +42,26 @@ class Setaman extends CI_Controller
         $response_barPerkecamatan = file_get_contents($api_url_barPerkecamatan);
         $data_barPerkecamatan = json_decode($response_barPerkecamatan, true);
 
+
+        $dataPenyemaian = 0;
+        $dataPenanaman = 0;
+        $target = 1000000;
+
+        foreach ($data_barPerkecamatan as $items) {
+            $dataPenyemaian += $items['total_jumlah_semai'];
+            $dataPenanaman += $items['total_jumlah_tanam'];
+        }
+
+        $persentasePenyemaian = ($dataPenyemaian / $target) * 100;
+        $persentasePenanaman  = ($dataPenanaman / $target) * 100;
+
         $response_komoditasTerbanyak = file_get_contents($api_url_komoditasTerbanyak);
         $data_komoditasTerbanyak = json_decode($response_komoditasTerbanyak, true);
 
         $response_Komoditas = file_get_contents($api_url_Komoditas);
         $data_Komoditas = json_decode($response_Komoditas, true);
+
+
 
         // fetch data
         $data['tertinggiSemai']  = $data_tertinggiSemai;
@@ -55,6 +70,11 @@ class Setaman extends CI_Controller
         $data['barPerkecamatan'] = $data_barPerkecamatan;
         $data['komoditasTerbanyak'] = $data_komoditasTerbanyak;
         $data['komoditas'] = $data_Komoditas;
+
+        $data['banyakSemai'] = number_format($dataPenyemaian, 2, ",", ".");
+        $data['banyakTanam'] = number_format($dataPenanaman, 2, ",", ".");
+        $data['persentasePenyemaian'] = number_format($persentasePenyemaian, 2) . "%";
+        $data['persentasePenanaman']  = number_format($persentasePenanaman, 2) . "%";
 
         // data
         $data['title']  = "Summary Setaman";
