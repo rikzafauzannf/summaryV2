@@ -61,7 +61,7 @@ class Bageur extends CI_Controller
         $data['barangTersalurkan'] = $data_barangTersalurkan;
         $data['totalBarangTersalurkan'] = number_format($totalBarangTersalurkan, 2, ",", ".") . " Barang";
         $data['totalBantuan'] = number_format($totalBantuan, 2, ",", ".") . " Bantuan";
-        $data['chart'] = $groupedData;
+        $data['chart'] = array_slice($groupedData, 0, 10, true);
 
         $data['title']  = "Summary Bageur";
         $data['header'] = "Bageur (Janjian Berbuat Baik)";
