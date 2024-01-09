@@ -61,27 +61,19 @@
                         },
                         colors: ["#57AFA9", "#F9C74F"],
                         series: [{
-                            name: "Bantuan Tersalurkan",
-                            data: [10, 33, 55, 65, 22, 54, 23, 22, 14, 57],
-                          },
-                          {
-                            name: "Barang Tersalurkan",
-                            data: [23, 24, 54, 66, 22, 54, 54, 23, 42, 75],
-                          },
-                        ],
+                          name: "Bantuan Tersalurkan",
+                          data: [<?php
+                                  foreach ($chart as $tanggal => $group) {
+                                    echo ($group['total_bantuan'] . ',');
+                                  }
+                                  ?>],
+                        }],
                         xaxis: {
-                          categories: [
-                            "Data 1",
-                            "Data 2",
-                            "Data 3",
-                            "Data 4",
-                            "Data 5",
-                            "Data 6",
-                            "Data 7",
-                            "Data 8",
-                            "Data 9",
-                            "Data 10",
-                          ],
+                          categories: [<?php
+                                        foreach ($chart as $tanggal => $group) {
+                                          echo ('"' . $group['tanggal'] . '",');
+                                        }
+                                        ?>],
                         },
                         stroke: {
                           show: true,

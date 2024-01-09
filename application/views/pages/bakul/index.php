@@ -212,7 +212,7 @@
                     return Math.round(val);
                   },
                 },
-                colors: ["#F94144", "#F8961E", "#F9C74F", "#90BE6D"],
+                // colors: ["#F94144", "#F8961E", "#F9C74F", "#90BE6D"],
                 series: [100, 150, 342, 110, 200],
                 labels: [
                   "Lansia",

@@ -29,6 +29,23 @@ class Bageur extends CI_Controller
         $response_bageur = file_get_contents($api_url_bageur);
         $data_bageur = json_decode($response_bageur, true);
 
+        // Buat array asosiatif untuk menyimpan hasil pengelompokan
+        $groupedData = array();
+
+        // Iterasi melalui data dan mengelompokkannya berdasarkan tanggal
+        foreach ($data_bageur as $item) {
+            $tanggal = $item['tgl_akhir'];
+            $jumlahBantuan = $item['barang_terkumpul'];
+
+            if (!isset($groupedData[$tanggal])) {
+                // Inisialisasi jika tanggal belum ada dalam hasil pengelompokan
+                $groupedData[$tanggal] = array('tanggal' => $tanggal, 'total_bantuan' => 0);
+            }
+
+            // Menjumlahkan jumlah bantuan pada tanggal yang sama
+            $groupedData[$tanggal]['total_bantuan'] += $jumlahBantuan;
+        }
+
         $response_barangTersalurkan = file_get_contents($api_url_barangTersalurkan);
         $data_barangTersalurkan = json_decode($response_barangTersalurkan, true);
 
@@ -44,6 +61,7 @@ class Bageur extends CI_Controller
         $data['barangTersalurkan'] = $data_barangTersalurkan;
         $data['totalBarangTersalurkan'] = number_format($totalBarangTersalurkan, 2, ",", ".") . " Barang";
         $data['totalBantuan'] = number_format($totalBantuan, 2, ",", ".") . " Bantuan";
+        $data['chart'] = $groupedData;
 
         $data['title']  = "Summary Bageur";
         $data['header'] = "Bageur (Janjian Berbuat Baik)";
