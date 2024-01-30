@@ -23,6 +23,7 @@ class Bakul extends CI_Controller
     {
         $data['title']  = "Summary Bakul";
         $data['header'] = "Bakul";
+        $data['Periode'] = "Periode I";
         $data['imgUrl'] = "/assets/img/logo-bakul.svg";
         $this->load->view('partials/header.php', $data);
         $this->load->view('pages/bakul/index.php');

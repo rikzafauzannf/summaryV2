@@ -39,7 +39,13 @@
                     </h3>
                 </div>
             </div>
-            <div>
+
+            <div class="d-flex align-items-center">
+                <?php
+                if (isset($Periode)) {
+                    echo ("<p class='me-2'>" . $Periode . "<p>");
+                }
+                ?>
                 <div class="tick" data-did-init="handleTickInit">
                     <div data-layout="horizontal fit">
                         <span data-key="hours" data-transform="pad(00)" data-view="flip"></span>
